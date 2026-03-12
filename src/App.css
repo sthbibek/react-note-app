@@ -1,38 +1,164 @@
-.App {
+.note-holder {
+  padding-top: 5%;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+.hidden {
+  position: absolute !important;
+  width: 0;
+  height: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  clip: rect(0px,0,0,0px);
+}
+
+.note-holder-inner {
+  margin: auto;
+  max-width: 640px;
+}
+
+.main-title {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.button-holder {
+  margin-bottom: 20px;
+}
+
+.button-holder button.btn {
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.empty-note {
+  background: rgba(0,0,0,0.1);
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.note-item {
+  border: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+}
+
+.note-item .note-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.note-item .note-title {
+  flex: 1;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  padding-right: 10px;
+}
+
+.note-item .note-tgl-icon {
+  font-size: 12px;
+}
+
+.note-item .note-tgl-icon .fa-minus, 
+.note-item.active .note-tgl-icon .fa-plus {
+  display: none;
+}
+
+.note-item.active .note-tgl-icon .fa-minus {
+  display: block;
+}
+
+.note-item .note-desc {
+  padding: 0 15px 20px;
+  font-size: 14px;
+  color: rgba(0,0,0,0.7);
+  /* display: none; */
+}
+
+.note-item .note-footer {
+  padding: 15px;
+  background: rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.note-item .note-action {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+}
+
+.note-item .note-footer .btn {
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 0;
+  font-size: 14px;
+  margin: 0 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.note-modal.modal {
+  --bs-modal-width: 640px;
+  --bs-modal-header-padding: 1.5rem;
+  --bs-modal-padding: 2rem 1.5rem;
+}
+
+.modal .modal-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+.note-form .form-group {
+  margin-bottom: 20px;
+}
+
+.note-form .form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.625rem;
+  color: rgba(0,0,0,0.7);
+  line-height: 1.3;
+}
+
+.note-form .form-group .form-control {
+  height: 45px;
+  border-radius: 0;
+  padding: 5px 15px;
+  font-size: 14px;
+}
+
+.note-form .form-group .form-control[readonly] {
+  background: rgba(0,0,0,0.05);
+  cursor: default;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.note-form .form-group textarea.form-control {
+  height: 130px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.note-form .btn-holder button.btn {
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  min-width: 150px;
+  min-height: 45px;
 }
